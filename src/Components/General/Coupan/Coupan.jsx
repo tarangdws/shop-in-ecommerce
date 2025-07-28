@@ -41,7 +41,7 @@ const Coupan = () => {
         >
           <AiFillCaretLeft />
           <p className=" [writing-mode:vertical-lr] font-semibold  rotate-180 uppercase">
-            Upto ₹200 off
+            Upto $200 off
           </p>
         </div>
       </div>
@@ -90,7 +90,7 @@ const Coupan = () => {
             <div className="w-1/2">
               <img
                 src="/images/product/Flat200.jpg"
-                alt="₹200 OFF"
+                alt="$200 OFF"
                 className="w-full"
               />
             </div>

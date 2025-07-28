@@ -1,8 +1,14 @@
 import React from "react";
 import { BiCart } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../utils/cartUtils";
 
 const ProductCard = ({ item, index }) => {
+    const handleAdd = (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      addToCart(item)
+    };
   return (
     <>
       <Link to={`/${item.category}/product/${item.id}`}
@@ -27,7 +33,7 @@ const ProductCard = ({ item, index }) => {
           )}
           <div className="flex justify-between items-center mt-2">
             <span className="text-primary text-base font-bold">
-              ₹{item.price}
+              ${item.price}
             </span>
             <span
               className={`text-sm  px-2 py-1 rounded ${
@@ -40,13 +46,10 @@ const ProductCard = ({ item, index }) => {
             </span>
           </div>
           <div className="flex justify-center items-center sm:!mt-4">
-            <button className="w-full flex justify-center items-center gap-2 px-4 py-1 h-8 rounded-lg hover:bg-primary/60 bg-thick-black text-white transition-duration">
+            <button onClick={handleAdd} className="w-full flex justify-center items-center gap-2 px-4 py-1 h-8 rounded-lg hover:bg-primary/60 bg-thick-black text-white transition-duration">
               <span className="text-center text-xs xs:text-base">Add to cart</span>
               <BiCart />
             </button>
-            {/* <button className="flex items-center gap-2 px-4 py-1 h-8 rounded-lg hover:bg-primary/60 bg-thick-black text-white transition-duration">
-              <BiCart />
-            </button> */}
           </div>
         </div>
       </Link>
