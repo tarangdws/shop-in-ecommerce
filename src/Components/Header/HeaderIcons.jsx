@@ -5,7 +5,7 @@ import CartDrawer from "../Pages/Cart/CartDrawer";
 import { cartCount } from "../../utils/cartUtils";
 
 
-const HeaderIcons = () => {
+const HeaderIcons = () => { 
   const [open, setOpen] = useState(false);
   const [cartBagCount, setCartBagCount] = useState(0);
 
