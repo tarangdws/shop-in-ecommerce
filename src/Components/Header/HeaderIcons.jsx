@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { BiShoppingBag, BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import CartDrawer from "../Pages/Cart/CartDrawer";
-import { cartCount, getCart } from "../../utils/cartUtils";
+import { cartCount } from "../../utils/cartUtils";
 
 
-const HeaderIcons = () => {
+const HeaderIcons = () => { 
   const [open, setOpen] = useState(false);
   const [cartBagCount, setCartBagCount] = useState(0);
 
