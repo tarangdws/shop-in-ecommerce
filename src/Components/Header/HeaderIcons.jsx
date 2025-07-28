@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiShoppingBag, BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import CartDrawer from "./Cart/CartDrawer";
+import CartDrawer from "../Pages/Cart/CartDrawer";
+import { cartCount, getCart } from "../../utils/cartUtils";
+
 
 const HeaderIcons = () => {
   const [open, setOpen] = useState(false);
+  const [cartBagCount, setCartBagCount] = useState(0);
+
+  useEffect(()=>{
+    const updateCount = () => setCartBagCount(cartCount());
+    updateCount()
+
+    window.addEventListener("cart-updated", updateCount);
+    return () => {
+      window.removeEventListener("cart-updated", updateCount);
+    }
+  },[])
 
   const showDrawer = () => {
     setOpen(true);
@@ -28,7 +41,7 @@ const HeaderIcons = () => {
         <button className="flex items-center gap-2 text-hover" onClick={showDrawer}>
           <div className="relative">
             <span className="absolute w-4 h-4 text-xs flex justify-center items-center bg-primary rounded-full text-white -top-2 -right-0.5">
-              0
+              {cartBagCount > 0 ? cartBagCount : 0}
             </span>
             <BiShoppingBag className="text-2xl" />
           </div>

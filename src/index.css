@@ -30,6 +30,10 @@
   }
 }
 
+.input-style {
+  @apply w-full px-4 py-2 border rounded-md focus:outline-none;
+}
+
 .hand-picked-product-slider .swiper-slide{
   @apply pb-3;
 }

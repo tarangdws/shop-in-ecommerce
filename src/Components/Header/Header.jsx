@@ -2,13 +2,13 @@ import React from "react";
 import Search from "./Search/Search";
 import HeaderIcons from "./HeaderIcons";
 import Navbar from "./Navbar";
-import CartDrawer from "./Cart/CartDrawer";
 import Logo from "./Logo";
+import CartDrawer from "../Pages/Cart/CartDrawer";
 
 const Header = () => {
   return (
     <>
-      <header className="bg-soft-bg text-xs xs:text-sm">
+      <header className="bg-soft-bg text-xs xs:text-sm sticky top-0 z-50 shadow">
         <div className="container py-6">
           <div className="flex items-center mb-3">
             <Logo />
