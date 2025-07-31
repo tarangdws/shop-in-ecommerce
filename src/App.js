@@ -1,5 +1,5 @@
 import "./App.css"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import {
   HomePage,
   MainLayout,
@@ -17,22 +17,22 @@ import PaymentPage from "./Components/Pages/Payment/PaymentPage";
 const App = () => {
   return (
     <>
-      <Router>
-        <Routes>
-          <Route element={<MainLayout />}>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/category/:slug' element={<CategoryPage />} />
-            <Route path='/:slug/product/:id' element={<ProductPage />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/checkout' element={<CheckoutPage />} />
-            <Route path='/payment' element={<PaymentPage />} />
-          </Route>
-          <Route path='*' element={<NotFound />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-        </Routes>
-      </Router>
-      <ToastContainer position="top-center"
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/category/:slug' element={<CategoryPage />} />
+          <Route path='/:slug/product/:id' element={<ProductPage />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<CheckoutPage />} />
+          <Route path='/payment' element={<PaymentPage />} />
+        </Route>
+        <Route path='*' element={<NotFound />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+      </Routes>
+
+      <ToastContainer
+        position="top-center"
         autoClose={1000}
         hideProgressBar={true}
         newestOnTop={true}
@@ -42,9 +42,10 @@ const App = () => {
         draggable
         pauseOnHover
         theme="light"
-        transition={Zoom} />
+        transition={Zoom}
+      />
     </>
   )
 }
 
-export default App
+export default App;

@@ -6,6 +6,9 @@ import { addToCart } from "../../../utils/cartUtils";
 
 const ProductInfo = ({ product }) => {
   const handleAdd = () => {
+    if (product.stock <= 0) {
+      return alert("This product is out of stock");
+    }
     addToCart(product)
   };
 

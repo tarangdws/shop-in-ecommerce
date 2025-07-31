@@ -9,7 +9,7 @@ import NewsLetter from '../../General/NewsLetter'
 const HomePage = () => {
   return (
     <>
-    <div className='container !pt-0'>
+    <div className='container'>
       <BannerSection />
       <BannerBelowCard />
       <SupportSeller />
